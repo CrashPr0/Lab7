@@ -1,0 +1,1 @@
+"tb_mips_pipe" -s "tb_mips_pipe_snap" --debug "typical" 

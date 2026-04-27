@@ -1,0 +1,17 @@
+0.7
+2020.2
+May 22 2025
+00:13:55
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/alu_pipe.v,1776710130,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/regfile_pipe.v,,alu_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/controlunit_pipe.v,1776709291,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/forwarding_unit.v,,controlunit_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/datapath_pipe.v,1776709548,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/mips_top_pipe.v,,datapath_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/dmem_pipe.v,1776709255,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/multiplier_pipe.v,,dmem_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/forwarding_unit.v,1776709299,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hazard_unit.v,,forwarding_unit,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hazard_unit.v,1776709302,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/imem_pipe.v,,hazard_unit,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hilo_reg_pipe.v,1776709311,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/datapath_pipe.v,,hilo_reg_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/imem_pipe.v,1776709253,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/dmem_pipe.v,,imem_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/mips_top_pipe.v,1776709560,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/tb_mips_pipe.v,,mips_top_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/multiplier_pipe.v,1776709308,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hilo_reg_pipe.v,,multiplier_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/regfile_pipe.v,1776709248,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/signext_pipe.v,,regfile_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/signext_pipe.v,1776709249,verilog,,C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/controlunit_pipe.v,,signext_pipe,,,,,,,,
+C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/tb_mips_pipe.v,1776709593,verilog,,,,tb_mips_pipe,,,,,,,,

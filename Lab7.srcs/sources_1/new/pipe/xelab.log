@@ -1,0 +1,25 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_mips_pipe -s tb_mips_pipe_snap --debug typical 
+Multi-threading is on. Using 10 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.controlunit_pipe
+Compiling module work.regfile_pipe
+Compiling module work.signext_pipe
+Compiling module work.hazard_unit
+Compiling module work.forwarding_unit
+Compiling module work.alu_pipe
+Compiling module work.multiplier_pipe
+Compiling module work.hilo_reg_pipe
+Compiling module work.datapath_pipe
+Compiling module work.imem_pipe
+Compiling module work.dmem_pipe
+Compiling module work.mips_top_pipe
+Compiling module work.tb_mips_pipe
+Built simulation snapshot tb_mips_pipe_snap
