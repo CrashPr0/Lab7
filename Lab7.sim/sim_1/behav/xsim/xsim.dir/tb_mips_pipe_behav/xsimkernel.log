@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_mips_pipe_behav/xsimk.exe -simmode gui -wdb tb_mips_pipe_behav.wdb -simrunnum 0 -socket 54678
+Running: xsim.dir/tb_mips_pipe_behav/xsimk.exe -simmode gui -wdb tb_mips_pipe_behav.wdb -simrunnum 0 -socket 49997
 Design successfully loaded
 Design Loading Memory Usage: 13208 KB (Peak: 13208 KB)
-Design Loading CPU Usage: 108 ms
+Design Loading CPU Usage: 62 ms
 Simulation completed
-Simulation Memory Usage: 14320 KB (Peak: 14320 KB)
-Simulation CPU Usage: 202 ms
+Simulation Memory Usage: 14260 KB (Peak: 14260 KB)
+Simulation CPU Usage: 140 ms

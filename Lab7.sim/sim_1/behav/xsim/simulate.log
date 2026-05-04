@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+[cycle 32]  SW  dmem[0] <= 0x00000018
+========================================================
+ Pipelined MIPS simulation finished.
+ cycle_count   = 32
+ final PC      = 0x00000024
+ M[0] (live rd_dm when dm_addr==0) observed at run-time.
+ final $v0     = 24   (expect 24 = 4!)
+========================================================
+PASS: $v0 == 24
+$finish called at time : 415 ns : File "C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/tb_mips_pipe.v" Line 84

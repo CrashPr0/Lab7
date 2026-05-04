@@ -4,20 +4,15 @@ verilog xil_defaultlib  --include "../../../../../../../../../../Xilinx/2025.1/V
 "../../../../Lab7.srcs/sources_1/new/pipe/controlunit_pipe.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/datapath_pipe.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/dmem_pipe.v" \
-"../../../../Lab7.srcs/sources_1/new/fact/factorial_core.v" \
-"../../../../Lab7.srcs/sources_1/new/fact/factorial_cu.v" \
-"../../../../Lab7.srcs/sources_1/new/fact/factorial_dp.v" \
-"../../../../Lab7.srcs/sources_1/new/soc/factorial_wrapper.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/forwarding_unit.v" \
-"../../../../Lab7.srcs/sources_1/new/soc/gpio_top.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/hazard_unit.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/hilo_reg_pipe.v" \
-"../../../../Lab7.srcs/sources_1/new/soc/imem_soc.v" \
+"../../../../Lab7.srcs/sources_1/new/pipe/imem_pipe.v" \
+"../../../../Lab7.srcs/sources_1/new/pipe/mips_top_pipe.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/multiplier_pipe.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/regfile_pipe.v" \
 "../../../../Lab7.srcs/sources_1/new/pipe/signext_pipe.v" \
-"../../../../Lab7.srcs/sources_1/new/soc/soc_top_pipe.v" \
-"../../../../Lab7.srcs/sources_1/new/soc/tb_soc_pipe.v" \
+"../../../../Lab7.srcs/sources_1/new/pipe/tb_mips_pipe.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

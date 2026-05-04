@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.runs/synth_1/mips_fpga.tcl"
+  variable script "C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.runs/synth_1/basys3_top_pipe.tcl"
   variable category "vivado_synth"
 }
 
@@ -58,8 +58,7 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -76,27 +75,26 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/adder.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/alu.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/auxdec.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/button_debouncer.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/clk_gen.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/controlunit.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/datapath.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/dmem.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/dreg.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/hex_to_7seg.v}
-  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/hilo_reg.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/memory/imem.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/led_mux.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/control_unit/maindec.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips_top.v}
-  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/multiplier.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/mux2.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/regfile.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/datapath/signext.v}
-  {C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/mips_fpga.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/alu_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/controlunit_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/datapath_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/debounce_pulse.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/disp_hex_mux.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/dmem_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/fact/factorial_core.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/fact/factorial_cu.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/fact/factorial_dp.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/factorial_wrapper.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/forwarding_unit.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/gpio_top.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hazard_unit.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/hilo_reg_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/imem_soc.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/multiplier_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/regfile_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/pipe/signext_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/soc_top_pipe.v}
+  {C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/sources_1/new/soc/basys3_top_pipe.v}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -116,7 +114,7 @@ read_checkpoint -auto_incremental -incremental {C:/Users/iSchool Admin/Documents
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top mips_fpga -part xc7a35tcpg236-1
+synth_design -top basys3_top_pipe -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -126,10 +124,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef mips_fpga.dcp
+write_checkpoint -force -noxdef basys3_top_pipe.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file mips_fpga_utilization_synth.rpt -pb mips_fpga_utilization_synth.pb"  } 
+generate_parallel_reports -reports { "report_utilization -file basys3_top_pipe_utilization_synth.rpt -pb basys3_top_pipe_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

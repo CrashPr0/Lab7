@@ -3,3 +3,23 @@
     <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="20768" HostCore="12" HostMemory="034141458432">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="24288" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="17788" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="31696" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="43440" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>

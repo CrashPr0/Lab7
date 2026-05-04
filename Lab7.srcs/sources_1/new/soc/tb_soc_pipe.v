@@ -21,10 +21,10 @@ module tb_soc_pipe;
     initial clk = 0;
     always #5 clk = ~clk;
 
-    // Helper to see internal MIPS registers
-    // $v0 is register 2, $a0 is register 4
-    wire [31:0] v0 = dut.dp.rf.rf_reg[2];
-    wire [31:0] a0 = dut.dp.rf.rf_reg[4];
+    // Correct hierarchical paths for Vivado XSim
+    // The regfile array is named 'rf' in regfile_pipe.v
+    wire [31:0] v0 = dut.dp.rf.rf[2];
+    wire [31:0] a0 = dut.dp.rf.rf[4];
     wire [31:0] fact_res = dut.fact.core.product;
     wire        fact_done = dut.fact.core.done;
 

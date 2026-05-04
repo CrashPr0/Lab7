@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log mips_fpga.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mips_fpga.tcl
+EAStep vivado -log basys3_top_pipe.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source basys3_top_pipe.tcl

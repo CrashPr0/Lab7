@@ -3,12 +3,22 @@
 module soc_top_pipe (
     input  wire        clk,
     input  wire        rst,
+    input  wire        btn_in,
     input  wire [3:0]  sw_in,
     input  wire [4:0]  ra3,
     output wire [31:0] rd3,
     output wire [31:0] pc_current,
     output wire [31:0] display_out
 );
+
+    // Debounce the button
+    wire btn_pulse;
+    debounce_pulse deb (
+        .clk       (clk),
+        .rst       (rst),
+        .btn_in    (btn_in),
+        .pulse_out (btn_pulse)
+    );
 
     // Bus signals from MIPS
     wire [31:0] instr_from_imem;
@@ -70,6 +80,7 @@ module soc_top_pipe (
         .a           (addr_bus[3:2]),
         .wd          (wd_bus),
         .sw_in       (sw_in),
+        .btn_pulse   (btn_pulse),
         .rd          (rd_gpio),
         .display_reg (display_out)
     );
