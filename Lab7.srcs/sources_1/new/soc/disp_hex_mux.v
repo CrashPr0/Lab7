@@ -8,6 +8,9 @@ module disp_hex_mux (
     output wire [7:0]  sseg     // Cathodes (LEDOUT)
 );
 
+    // Dummy wire to suppress synthesis warning about unconnected upper 16 bits
+    wire [15:0] unused_hex_in = hex_in[31:16];
+
     // Refresh rate counter
     // 100 MHz clock divided down to ~1 kHz refresh rate per digit
     reg [19:0] q_reg;
@@ -73,6 +76,7 @@ module disp_hex_mux (
             4'hd: sseg_reg = 7'b0100001;
             4'he: sseg_reg = 7'b0000110;
             4'hf: sseg_reg = 7'b0001110;
+            default: sseg_reg = 7'b1111111; // Blank if unknown
         endcase
     end
 

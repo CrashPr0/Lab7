@@ -8,7 +8,8 @@ module soc_top_pipe (
     input  wire [4:0]  ra3,
     output wire [31:0] rd3,
     output wire [31:0] pc_current,
-    output wire [31:0] display_out
+    output wire [31:0] display_out,
+    output wire        we_dm
 );
 
     // Debounce the button
@@ -26,6 +27,8 @@ module soc_top_pipe (
     wire        we_bus;
     wire [31:0] addr_bus;
     wire [31:0] wd_bus;
+    
+    assign we_dm = we_bus;
 
     // Peripheral read data
     wire [31:0] rd_dm;
@@ -54,8 +57,12 @@ module soc_top_pipe (
         .dm_addr         (addr_bus),
         .wd_dm           (wd_bus),
         .pc_current      (pc_current),
+        .instrD_out      (),
+        .instrE_out      (),
+        .instrM_out      (),
+        .instrW_out      (),
+        .alu_outM_dbg    (),
         .rd3             (rd3)
-        // (debug ports omitted for brevity in SOC top)
     );
 
     imem_soc imem (
@@ -76,7 +83,7 @@ module soc_top_pipe (
     gpio_top gpio (
         .clk         (clk),
         .rst         (rst),
-        .we          (we_bus && (addr_bus[11:8] == 4'h9)),
+        .we          (we_bus && sel_gpio),
         .a           (addr_bus[3:2]),
         .wd          (wd_bus),
         .sw_in       (sw_in),

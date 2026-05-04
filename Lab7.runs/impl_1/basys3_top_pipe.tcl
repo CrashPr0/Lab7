@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -123,7 +124,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet {{C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.runs/synth_1/basys3_top_pipe.dcp}}
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{C:/Users/iSchool Admin/Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/mips_fpga.xdc}}
+  read_xdc {{C:/Users/iSchool Admin/Documents/factorial_vivado_project/vivado/Lab7/Lab7.srcs/constrs_1/new/basys3.xdc}}
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

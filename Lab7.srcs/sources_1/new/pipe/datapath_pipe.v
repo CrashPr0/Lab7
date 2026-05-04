@@ -132,7 +132,7 @@ module datapath_pipe (
     reg  [31:0] instrM;
     reg  [31:0] alu_outM;
     reg  [31:0] wd_dmM;            // rt value (for SW data)
-    reg  [63:0] mult_outM;
+    (* DONT_TOUCH = "TRUE" *) reg  [63:0] mult_outM;
     reg  [31:0] pc_plus4M;
     reg  [4:0]  rf_waM;
     reg         we_dmM_reg;

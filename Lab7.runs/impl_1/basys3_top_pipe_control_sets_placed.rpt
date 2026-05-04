@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Mon May  4 11:03:17 2026
+| Date         : Mon May  4 12:08:23 2026
 | Host         : INF-LOAN3-ALW running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file basys3_top_pipe_control_sets_placed.rpt
 | Design       : basys3_top_pipe
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    87 |
-|    Minimum number of control sets                        |    87 |
+| Total control sets                                       |    88 |
+|    Minimum number of control sets                        |    88 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    23 |
+| Unused register locations in slices containing registers |    28 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,8 +39,8 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    87 |
-| >= 0 to < 4        |     0 |
+| Total control sets |    88 |
+| >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     0 |
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               4 |            3 |
-| No           | No                    | Yes                    |             392 |          148 |
+| No           | No                    | No                     |               6 |            4 |
+| No           | No                    | Yes                    |             358 |          122 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |            2613 |         1103 |
-| Yes          | Yes                   | No                     |              48 |           10 |
+| Yes          | No                    | Yes                    |            2560 |          933 |
+| Yes          | Yes                   | No                     |              48 |           11 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,93 +73,94 @@ Table of Contents
 +----------------+----------------------------------------------+------------------------+------------------+----------------+--------------+
 |  Clock Signal  |                 Enable Signal                |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+----------------------------------------------+------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                                              |                        |                3 |              4 |         1.33 |
-|  clk_IBUF_BUFG | soc/fact/core/dp/mul_res_i_1_n_0             | rst_IBUF               |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/we_dmM_reg_reg_0[0]                   | rst_IBUF               |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG | soc/fact/core/cu/FSM_onehot_state[6]_i_1_n_0 | rst_IBUF               |                2 |              7 |         3.50 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[3]_rep_4[0]              | rst_IBUF               |                3 |             16 |         5.33 |
-|  clk_IBUF_BUFG | soc/fact/core/cu/Q[3]                        | soc/fact/core/cu/SR[0] |                3 |             17 |         5.67 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[8][31]_i_1_n_0                  | rst_IBUF               |               18 |             32 |         1.78 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[6][31]_i_1_n_0                  | rst_IBUF               |               25 |             32 |         1.28 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[13][31]_i_1_n_0                 | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[3][31]_i_1_n_0                  | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[2][31]_i_1_n_0                  | rst_IBUF               |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[1][31]_i_1_n_0                  | rst_IBUF               |               20 |             32 |         1.60 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[10][31]_i_1_n_0                 | rst_IBUF               |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[12][31]_i_1_n_0                 | rst_IBUF               |               18 |             32 |         1.78 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[14][31]_i_1_n_0                 | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[4][31]_i_1_n_0                  | rst_IBUF               |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[5][31]_i_1_n_0                  | rst_IBUF               |               21 |             32 |         1.52 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[7][31]_i_1_n_0                  | rst_IBUF               |               22 |             32 |         1.45 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_22[0]          | rst_IBUF               |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_2[0]           | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_5[0]           | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_7[0]           | rst_IBUF               |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_13[0]          | rst_IBUF               |               26 |             32 |         1.23 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_16[0]          | rst_IBUF               |               15 |             32 |         2.13 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_4[0]              | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_7[0]              | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_10[0]          | rst_IBUF               |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_1[0]              | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_19[0]          | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_5[0]              | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_21[0]          | rst_IBUF               |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_2[0]              | rst_IBUF               |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[3]_rep_3[0]              | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_3[0]           | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_0[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_1[0]                  | rst_IBUF               |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_2[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_6[0]              | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_18[0]          | rst_IBUF               |               26 |             32 |         1.23 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_9[0]           | rst_IBUF               |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_3[0]              | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_20[0]          | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_8[0]              | rst_IBUF               |               11 |             32 |         2.91 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[3]_rep_1[0]              | rst_IBUF               |               13 |             32 |         2.46 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[3]_rep_2[0]              | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_15[0]          | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_17[0]          | rst_IBUF               |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_4[0]           | rst_IBUF               |               15 |             32 |         2.13 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_6[0]           | rst_IBUF               |               24 |             32 |         1.33 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_8[0]           | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_10[0]             | rst_IBUF               |                5 |             32 |         6.40 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[2]_rep_9[0]              | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_1[0]           | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_12[0]          | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_14[0]          | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[4]_rep__0_11[0]          | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/E[0]                                  | rst_IBUF               |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_1[0]                  | rst_IBUF               |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_14[0]                 | rst_IBUF               |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_2[0]                  | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_12[0]                 | rst_IBUF               |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_7[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[6]_1[0]                  | rst_IBUF               |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_4[0]                  | rst_IBUF               |               19 |             32 |         1.68 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_9[0]                  | rst_IBUF               |                7 |             32 |         4.57 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_5[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_3[0]                  | rst_IBUF               |               10 |             32 |         3.20 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_6[0]                  | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[6]_4[0]                  | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[5]_5[0]                  | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_13[0]                 | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[6]_2[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_10[0]                 | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_7[0]                  | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_3[0]                  | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_6[0]                  | rst_IBUF               |               14 |             32 |         2.29 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_11[0]                 | rst_IBUF               |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_4[0]                  | rst_IBUF               |               16 |             32 |         2.00 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[6]_0[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_0[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[6]_3[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[9][31]_i_1_n_0                  | rst_IBUF               |               26 |             32 |         1.23 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[15][31]_i_1_n_0                 | rst_IBUF               |               18 |             32 |         1.78 |
-|  clk_IBUF_BUFG | soc/dp/rf/rf[11][31]_i_1_n_0                 | rst_IBUF               |               17 |             32 |         1.88 |
-|  clk_IBUF_BUFG | soc/dp/alu_outM_reg[7]_8[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
-|  clk_IBUF_BUFG | soc/dp/instrD[31]_i_1_n_0                    | rst_IBUF               |               23 |             85 |         3.70 |
-|  clk_IBUF_BUFG |                                              | rst_IBUF               |              148 |            392 |         2.65 |
+|  clk_IBUF_BUFG |                                              |                        |                1 |              2 |         2.00 |
+|  sys_clk       |                                              |                        |                3 |              4 |         1.33 |
+|  sys_clk       | soc/dp/we_dmM_reg_reg_0[0]                   | rst_IBUF               |                1 |              4 |         4.00 |
+|  sys_clk       | soc/fact/core/dp/mul_res_i_1_n_0             | rst_IBUF               |                2 |              4 |         2.00 |
+|  sys_clk       | soc/fact/core/cu/FSM_onehot_state[6]_i_1_n_0 | rst_IBUF               |                2 |              7 |         3.50 |
+|  sys_clk       | soc/dp/we_dmM_reg_reg_1[0]                   | rst_IBUF               |                3 |             16 |         5.33 |
+|  sys_clk       | soc/fact/core/cu/Q[3]                        | soc/fact/core/cu/SR[0] |                3 |             17 |         5.67 |
+|  sys_clk       | soc/dp/rf/rf[5][31]_i_1_n_0                  | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/rf/rf[10][31]_i_1_n_0                 | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/rf/rf[15][31]_i_1_n_0                 | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/rf/rf[11][31]_i_1_n_0                 | rst_IBUF               |                7 |             32 |         4.57 |
+|  sys_clk       | soc/dp/rf/rf[12][31]_i_1_n_0                 | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/rf/rf[13][31]_i_1_n_0                 | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/rf/rf[9][31]_i_1_n_0                  | rst_IBUF               |               20 |             32 |         1.60 |
+|  sys_clk       | soc/dp/rf/rf[4][31]_i_1_n_0                  | rst_IBUF               |               16 |             32 |         2.00 |
+|  sys_clk       | soc/dp/rf/rf[6][31]_i_1_n_0                  | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/rf/rf[3][31]_i_1_n_0                  | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/rf/rf[1][31]_i_1_n_0                  | rst_IBUF               |               15 |             32 |         2.13 |
+|  sys_clk       | soc/dp/rf/rf[14][31]_i_1_n_0                 | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/rf/rf[7][31]_i_1_n_0                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/rf/rf[8][31]_i_1_n_0                  | rst_IBUF               |               18 |             32 |         1.78 |
+|  sys_clk       | soc/dp/E[0]                                  | rst_IBUF               |                7 |             32 |         4.57 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_1[0]              | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_10[0]             | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_5[0]              | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_6[0]              | rst_IBUF               |               19 |             32 |         1.68 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_2[0]              | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_3[0]              | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_4[0]              | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_7[0]              | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_2[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_6[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_10[0]                 | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_14[0]                 | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_6[0]                  | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/alu_outM_reg[6]_1[0]                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_4[0]                  | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/alu_outM_reg[6]_0[0]                  | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_11[0]          | rst_IBUF               |               24 |             32 |         1.33 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_7[0]           | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_0[0]                  | rst_IBUF               |                7 |             32 |         4.57 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_0[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_18[0]          | rst_IBUF               |               17 |             32 |         1.88 |
+|  sys_clk       | soc/dp/alu_outM_reg[6]_3[0]                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[3]_rep_2[0]              | rst_IBUF               |                7 |             32 |         4.57 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_19[0]          | rst_IBUF               |               18 |             32 |         1.78 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_0[0]                  | rst_IBUF               |               15 |             32 |         2.13 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_11[0]                 | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_3[0]                  | rst_IBUF               |                6 |             32 |         5.33 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_3[0]           | rst_IBUF               |               14 |             32 |         2.29 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_12[0]          | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_5[0]           | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_6[0]           | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_4[0]           | rst_IBUF               |               24 |             32 |         1.33 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_8[0]           | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_9[0]           | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_7[0]                  | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_14[0]          | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_8[0]                  | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_13[0]          | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[6]_2[0]                  | rst_IBUF               |               17 |             32 |         1.88 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_9[0]                  | rst_IBUF               |               12 |             32 |         2.67 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_20[0]          | rst_IBUF               |               31 |             32 |         1.03 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_17[0]          | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_1[0]                  | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_16[0]          | rst_IBUF               |               26 |             32 |         1.23 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_13[0]                 | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_3[0]                  | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_4[0]                  | rst_IBUF               |               19 |             32 |         1.68 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_1[0]           | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_12[0]                 | rst_IBUF               |               14 |             32 |         2.29 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_2[0]           | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_7[0]                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[6]_4[0]                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_5[0]                  | rst_IBUF               |                7 |             32 |         4.57 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_10[0]          | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_2[0]                  | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_8[0]              | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       | soc/dp/alu_outM_reg[3]_rep_1[0]              | rst_IBUF               |               10 |             32 |         3.20 |
+|  sys_clk       | soc/dp/alu_outM_reg[7]_1[0]                  | rst_IBUF               |                5 |             32 |         6.40 |
+|  sys_clk       | soc/dp/alu_outM_reg[2]_rep_9[0]              | rst_IBUF               |               15 |             32 |         2.13 |
+|  sys_clk       | soc/dp/alu_outM_reg[4]_rep__1_15[0]          | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_5[0]                  | rst_IBUF               |                6 |             32 |         5.33 |
+|  sys_clk       | soc/dp/alu_outM_reg[3]_rep_3[0]              | rst_IBUF               |               11 |             32 |         2.91 |
+|  sys_clk       | soc/dp/alu_outM_reg[5]_1[0]                  | rst_IBUF               |                8 |             32 |         4.00 |
+|  sys_clk       | soc/dp/rf/rf[2][31]_i_1_n_0                  | rst_IBUF               |               13 |             32 |         2.46 |
+|  sys_clk       | soc/dp/instrD[29]_i_1_n_0                    | rst_IBUF               |                9 |             32 |         3.56 |
+|  sys_clk       |                                              | rst_IBUF               |              122 |            358 |         2.93 |
 +----------------+----------------------------------------------+------------------------+------------------+----------------+--------------+
 
 

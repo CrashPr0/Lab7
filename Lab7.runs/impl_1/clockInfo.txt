@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.1
-| Date         : Mon May  4 11:02:26 2026
+| Date         : Mon May  4 12:08:13 2026
 | Host         : INF-LOAN3-ALW
 | Design       : design_1
 | Device       : xc7a35t-cpg236-1--

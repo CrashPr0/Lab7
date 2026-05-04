@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date             : Mon May  4 11:05:50 2026
+| Date             : Mon May  4 12:09:15 2026
 | Host             : INF-LOAN3-ALW running 64-bit major release  (build 9200)
 | Command          : report_power -file basys3_top_pipe_power_routed.rpt -pb basys3_top_pipe_power_summary_routed.pb -rpx basys3_top_pipe_power_routed.rpx
 | Design           : basys3_top_pipe
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.131        |
+| Total On-Chip Power (W)  | 0.079        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.059        |
+| Dynamic (W)              | 0.007        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.3         |
-| Junction Temperature (C) | 25.7         |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.008 |        3 |       --- |             --- |
-| Slice Logic    |     0.015 |     5752 |       --- |             --- |
-|   LUT as Logic |     0.013 |     1846 |     20800 |            8.88 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     5515 |       --- |             --- |
+|   LUT as Logic |     0.001 |     1643 |     20800 |            7.90 |
+|   Register     |    <0.001 |     2972 |     41600 |            7.14 |
+|   CARRY4       |    <0.001 |       41 |      8150 |            0.50 |
 |   F7/F8 Muxes  |    <0.001 |      608 |     32600 |            1.87 |
-|   Register     |    <0.001 |     3058 |     41600 |            7.35 |
-|   CARRY4       |    <0.001 |       46 |      8150 |            0.56 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.027 |     4281 |       --- |             --- |
-| DSPs           |     0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.008 |       20 |       106 |           18.87 |
+|   Others       |     0.000 |       22 |       --- |             --- |
+| Signals        |     0.002 |     4195 |       --- |             --- |
+| DSPs           |    <0.001 |        6 |        90 |            6.67 |
+| I/O            |     0.001 |       20 |       106 |           18.87 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.131 |          |           |                 |
+| Total          |     0.079 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.061 |       0.051 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -129,7 +129,7 @@ Table of Contents
 +-------------+--------+-----------------+
 | Clock       | Domain | Constraint (ns) |
 +-------------+--------+-----------------+
-| sys_clk_pin | clk    |            10.0 |
+| sys_clk_pin | clk    |            40.0 |
 +-------------+--------+-----------------+
 
 
@@ -142,13 +142,10 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| basys3_top_pipe |     0.059 |
-|   soc           |     0.051 |
-|     dmem        |     0.011 |
-|     dp          |     0.038 |
-|       rf        |     0.007 |
-|     fact        |     0.002 |
-|       core      |     0.002 |
+| basys3_top_pipe |     0.007 |
+|   soc           |     0.006 |
+|     dmem        |     0.001 |
+|     dp          |     0.004 |
 +-----------------+-----------+
 
 

@@ -23,3 +23,38 @@
     <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="43440" HostCore="12" HostMemory="034141458432">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="31012" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="15732" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="41712" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="48612" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="5216" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="35476" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="iSchool Admin" Host="INF-LOAN3-ALW" Pid="48696" HostCore="12" HostMemory="034141458432">
+    </Process>
+</ProcessHandle>

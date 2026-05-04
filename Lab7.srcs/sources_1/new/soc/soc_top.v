@@ -65,10 +65,11 @@ module soc_top (
     gpio_top gpio (
         .clk         (clk),
         .rst         (rst),
-        .we          (we_bus && (addr_bus[11:8] == 4'h9)),
+        .we          (we_bus && sel_gpio),
         .a           (addr_bus[3:2]),
         .wd          (wd_bus),
         .sw_in       (sw_in),
+        .btn_pulse   (1'b0), // btn_pulse not routed in week 3 yet unless we want to, but let's wire it to 0 for now or wire it up
         .rd          (rd_gpio),
         .display_reg (display_out)
     );

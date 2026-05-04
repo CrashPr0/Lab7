@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Mon May  4 11:01:18 2026
+| Date         : Mon May  4 12:07:07 2026
 | Host         : INF-LOAN3-ALW running 64-bit major release  (build 9200)
 | Command      : report_utilization -file basys3_top_pipe_utilization_synth.rpt -pb basys3_top_pipe_utilization_synth.pb
 | Design       : basys3_top_pipe
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 1751 |     0 |          0 |     20800 |  8.42 |
-|   LUT as Logic          | 1751 |     0 |          0 |     20800 |  8.42 |
+| Slice LUTs*             | 1658 |     0 |          0 |     20800 |  7.97 |
+|   LUT as Logic          | 1658 |     0 |          0 |     20800 |  7.97 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         | 3057 |     0 |          0 |     41600 |  7.35 |
-|   Register as Flip Flop | 3057 |     0 |          0 |     41600 |  7.35 |
+| Slice Registers         | 2971 |     0 |          0 |     41600 |  7.14 |
+|   Register as Flip Flop | 2971 |     0 |          0 |     41600 |  7.14 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                |  416 |     0 |          0 |     16300 |  2.55 |
 | F8 Muxes                |  192 |     0 |          0 |      8150 |  2.36 |
@@ -58,9 +58,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 2048  |          Yes |           - |          Set |
-| 957   |          Yes |           - |        Reset |
+| 869   |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 50    |          Yes |       Reset |            - |
+| 52    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -83,8 +83,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------------+------+-------+------------+-----------+-------+
 |    Site Type   | Used | Fixed | Prohibited | Available | Util% |
 +----------------+------+-------+------------+-----------+-------+
-| DSPs           |    2 |     0 |          0 |        90 |  2.22 |
-|   DSP48E1 only |    2 |       |            |           |       |
+| DSPs           |    6 |     0 |          0 |        90 |  6.67 |
+|   DSP48E1 only |    6 |       |            |           |       |
 +----------------+------+-------+------------+-----------+-------+
 
 
@@ -119,7 +119,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |          0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         5 |  0.00 |
@@ -154,21 +154,22 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDPE     | 2048 |        Flop & Latch |
-| LUT6     | 1190 |                 LUT |
-| FDCE     |  957 |        Flop & Latch |
+| LUT6     | 1148 |                 LUT |
+| FDCE     |  869 |        Flop & Latch |
 | MUXF7    |  416 |               MuxFx |
-| LUT2     |  267 |                 LUT |
-| LUT5     |  254 |                 LUT |
+| LUT5     |  212 |                 LUT |
+| LUT2     |  205 |                 LUT |
 | MUXF8    |  192 |               MuxFx |
-| LUT4     |  160 |                 LUT |
-| LUT3     |  139 |                 LUT |
-| FDRE     |   50 |        Flop & Latch |
-| CARRY4   |   46 |          CarryLogic |
+| LUT3     |  161 |                 LUT |
+| LUT4     |  144 |                 LUT |
+| FDRE     |   52 |        Flop & Latch |
+| CARRY4   |   41 |          CarryLogic |
 | OBUF     |   13 |                  IO |
 | IBUF     |    7 |                  IO |
-| LUT1     |    2 |                 LUT |
+| DSP48E1  |    6 |    Block Arithmetic |
+| LUT1     |    3 |                 LUT |
 | FDSE     |    2 |        Flop & Latch |
-| DSP48E1  |    2 |    Block Arithmetic |
+| BUFGCTRL |    1 |               Clock |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

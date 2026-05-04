@@ -342,14 +342,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../../../Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/single_cycle_mips_source_initial/mips/mips_top.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -445,7 +437,7 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../../../../Downloads/Lab7_Attachment1/MIPS_single_cycle_patched/validation_wrapper/mips_fpga.xdc">
+      <File Path="$PSRCDIR/constrs_1/new/basys3.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

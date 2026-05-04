@@ -6,43 +6,35 @@ module debounce_pulse (
     input  wire btn_in,
     output reg  pulse_out
 );
-    reg [19:0] count;
-    reg btn_sync_0, btn_sync_1;
-    reg btn_stable;
-
-    // Synchronize the asynchronous button input
+    // Simple 2-stage synchronizer
+    reg sync_0, sync_1;
     always @(posedge clk) begin
-        btn_sync_0 <= btn_in;
-        btn_sync_1 <= btn_sync_0;
+        sync_0 <= btn_in;
+        sync_1 <= sync_0;
     end
 
-    // Debounce: Wait for button to be stable for ~10ms (1 million cycles at 100MHz)
+    // Shift register for debouncing (requires button to be high for 16 consecutive clock cycles)
+    // This is extremely robust against noisy mechanical switches and won't get "stuck"
+    reg [15:0] shift_reg;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            count <= 0;
-            btn_stable <= 0;
+            shift_reg <= 16'b0;
         end else begin
-            if (btn_sync_1 != btn_stable) begin
-                count <= count + 1;
-                if (count == 20'hFFFFF) begin
-                    btn_stable <= btn_sync_1;
-                    count <= 0;
-                end
-            end else begin
-                count <= 0;
-            end
+            shift_reg <= {shift_reg[14:0], sync_1};
         end
     end
 
-    // Pulse Generator: Create a single clock cycle pulse on rising edge of stable button
+    wire btn_stable_high = (shift_reg == 16'hFFFF);
+    
+    // Pulse generator
     reg btn_prev;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            btn_prev <= 0;
-            pulse_out <= 0;
+            btn_prev <= 1'b0;
+            pulse_out <= 1'b0;
         end else begin
-            btn_prev <= btn_stable;
-            pulse_out <= (btn_stable && !btn_prev);
+            btn_prev <= btn_stable_high;
+            pulse_out <= (btn_stable_high && !btn_prev);
         end
     end
 endmodule
